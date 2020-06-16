@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+*{
+    border: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.formPersonaje{
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 10px;
+}
+section{
+    background-color: #bebebe;
+}
