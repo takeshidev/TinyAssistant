@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiny Assistant</title>
+    <!-- Referencias estandard-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/login.js" defer></script>
+    <!-- Referencias particulares-->
+</head>
+
+<body onload="verificarusuario()">
+    <div id="contenedor">
+        <!-- INICIO SECCION CABECERA va en todas las paginas-->
+        <header>
+            <h1>Tiny Assistant</h1>
+            <h2>Asistente para Tiny Dungeon</h2>
+        </header>
+        <script></script>
+        <nav>
+            <div class="menuitem" id="inicio"><a href="index.html">Inicio</a></div>
+            <div class="menuitem" id="quienes"><a href="quienes.html">Quienes somos</a></div>
+            <div class="menuitem" id="personajes"><a href="generadorpersonajes.html">Generador Personajes</a></div>
+            <div class="menuitem" id="aventuras"><a href="generadoraventuras">Generador Aventuras</a></div>
+            <div class="menuitem" id="cerrar"><a href="cerrarsesion.html">Cerrar sesion</a></div>
+        </nav>
+        <div id="perfil">
+            <div id="sihayusuario">
+                Hola <span id="nomuser"></span>
+            </div>
+            <div id="nohayusuario">
+                <form id="formusuario">
+                    Usuario: <input type="text" name="usuario" id="usuario" required>
+                    <button type="button" onclick="login()">Login</button>
+                </form>
+            </div>
+        </div>
+        <!-- FIN SECCION CABECERA-->
+
+
+        <button id="cierrasesion" onclick="cerrarsesion()">Cerrar sesion</button>
+    </div>
+    <!-- FOOTER va en todas las paginas-->
+    <footer>
+        &copy; Tiny Assistant - 2020
+        <div>Siguenos en redes sociales</div>
+    </footer>
+
+
+</body>
+
+</html>
