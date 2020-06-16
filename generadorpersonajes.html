@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)file:///C:/Users/Cristobal%20L/Downloads/generadorpersonajes.html -->
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes GEN</title>
+    <link rel="stylesheet" href="css/personajeForm.css">
+
+</head>
+
+<body>
+    <h1>Generador de Personajes</h1>
+    <form class="formPersonaje" action="file:///C:/Users/Cristobal%20L/Downloads/generadorpersonajes.html">
+        <!-- PERSONAJE -->
+        <section>
+            <h2>Personaje</h2>
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" required>
+            </div>
+            <div>
+                <label for="pais">País:</label>
+                <input type="text" name="pais" id="pais">
+            </div>
+            <div>
+                <label for="edad">Edad:</label>
+                <input type="number" name="edad" id="edad">
+            </div>
+            <div>
+                <label for="ojos">Ojos:</label>
+                <input type="text" name="ojos" id="ojos">
+            </div>
+            <div>
+                <label for="pelo">Pelo:</label>
+                <input type="text" name="pelo" id="pelo">
+            </div>
+            <div>
+                <label for="oficio">Oficio Familiar:</label>
+                <input type="text" name="oficio" id="oficio" required>
+            </div>
+            <div>
+                <label for="creencias">Creencias:</label>
+                <input type="text" name="creencias" id="creencias">
+            </div>
+        </section>
+
+        <!-- HERENCIA -->
+        <section>
+            <h2>Herencia</h2>
+            <label for="herencia">Herencia:</label>
+            <select name="herencia" id="herencia" onchange="rasgo4to();" required>
+                <!--opciones se crean con el script-->
+            </select>
+            <!--Rasgos Salimar-->
+            <div id="divSalimar" hidden>
+                <h3>Rasgo Salimar</h3>
+                <div>
+                    <label for="pyro">Pyrothermic Healing</label>
+                    <input type="radio" name="salimarRasgo" id="pyro">
+                </div>
+                <div>
+                    <label for="cryo">Cryothermic Healing</label>
+                    <input type="radio" name="salimarRasgo" id="cryo">
+                </div>
+            </div>
+        </section>
+
+        <!-- RASGO -->
+        <!--se seleccionan 3, como humano se seleccionan 4-->
+        <section>
+            <h2>Rasgos</h2>
+            <label for="rasgo1">Rasgo 1:</label>
+            <select name="rasgo1" id="rasgo1" required>
+                <!--opciones se crean con el script-->
+            </select>
+            <label for="rasgo2">Rasgo 2:</label>
+            <select name="rasgo2" id="rasgo2" required>
+                <!--opciones se crean con el script-->
+            </select>
+            <label for="rasgo3">Rasgo 3:</label>
+            <select name="rasgo3" id="rasgo3" required>
+                <!--opciones se crean con el script-->
+            </select>
+            <div id="div4" hidden><label for="rasgo4">Rasgo 4:</label>
+            <select name="rasgo4" id="rasgo4">
+                <!--opciones se crean con el script-->
+            </select></div>
+        </section>
+        <!-- Especialidad en tipo de armas -->
+        <!--1 selección-->
+        <section>
+            <h2>Especialidad en armas</h2>
+            <div>
+                <input type="radio" name="espTArmas" id="CLiviano" value="0">
+                <label value="0">Cuerpo a cuerpo liviano</label>
+            </div>
+            <div>
+                <input type="radio" name="espTArmas" id="CPesado" value="1">
+                <label value="1">Cuerpo a cuerpo pesado</label>
+            </div>
+            <div>
+                <input type="radio" name="espTArmas" id="Rango" value="2">
+                <label value="2">Rango</label>
+            </div>
+            <input type="text" name="espArma" id="espArma" placeholder="Arma">
+        </section>
+
+        <button type="submit" onclick="crear()">Crear</button>
+        <a href="dados.html">Tirar dados</a>
+    </form>
+
+    <!--  SCRIPT  -->
+    <script>
+        var rasgosEspeciales = new Array('Select an additional trait', 'Bow Mastery', 'Dark Vision', 'Globin Agility', 'Pyrothermic Healing', 'Ancient Heart', 'Powerful Claws', 'Cold-Blooded');
+        var rasgos = new Array('','Acrobat', 'Alchemist', 'Armor Master', 'Barfighter', 'Beastspeaker', 'Beserker', 'Blacksmith', 'Brawler', 'Charismatic', 'Cleave', 'Dark-Fighter', 'Defender', 'Diehard', 'Drunken Master', 'Dungeoneer', 'Educated', 'Eidetic Memory', 'Familiar', 'Fleet of Foot', 'Healer', 'Insightful', 'Lucky', 'Marksman', 'Martial Artist', 'Fingers', 'Opportunist', 'Perceptive', 'Quartermaster', 'Quick Shot', 'Resolute', 'Shield Bearer', 'Sneaky', 'Spell Reader', 'Spell-Touched', 'Strong', 'Survivalist', 'Tough', 'Tracker', 'Trapmaster', 'Vigilant');
+        var herencia = new Array('','Humano', 'Elfos', 'Enano', 'Duende', 'Salimar', 'Arbol', 'Karhu', 'Lagarto');
+
+        var herenciahtml = document.getElementById("herencia");
+        var rasgo1html = document.getElementById("rasgo1");
+        var rasgo2html = document.getElementById("rasgo2");
+        var rasgo3html = document.getElementById("rasgo3");
+        var rasgo4html = document.getElementById("rasgo4");
+
+        for (let index = 0; index < herencia.length; index++) {
+            const element = herencia[index];
+            herenciahtml.innerHTML += '<option value="' + index + '">' + element + '</option>';
+        }
+        for (let index = 0; index < rasgos.length; index++) {
+            const element = rasgos[index];
+            rasgo1html.innerHTML += '<option value="' + index + '">' + element + '</option>';
+            rasgo2html.innerHTML += '<option value="' + index + '">' + element + '</option>';
+            rasgo3html.innerHTML += '<option value="' + index + '">' + element + '</option>';
+            rasgo4html.innerHTML += '<option value="' + index + '">' + element + '</option>';
+        }
+        function rasgo4to() {
+            console.log(herenciahtml.value);
+            if (herenciahtml.value == 1) {
+                document.getElementById("div4").hidden = false;
+                
+                console.log("humanooo");
+            } else {
+                document.getElementById("div4").hidden = true;
+                console.log(" no humanooo");
+
+            }
+            
+            if (herenciahtml.value == 5) {
+                document.getElementById("divSalimar").hidden = false;
+                
+                console.log("Salimar");
+            } else {
+                document.getElementById("divSalimar").hidden = true;
+                console.log(" no no Salimar");
+                
+            }
+        }
+
+
+
+        function crear() {
+            console.log("Guardando en local storage...")
+            
+            var inputNombre = document.getElementById("nombre").value;
+            localStorage.setItem("nombre", inputNombre);
+            console.log("nombre:"+ inputNombre);
+
+            var inputHerencia = document.getElementById("herencia").value;
+            localStorage.setItem("herencia", inputHerencia);
+            console.log("herencia:"+ inputHerencia);
+
+            var inputPais = document.getElementById("pais").value;
+            localStorage.setItem("pais", inputPais);
+            console.log("pais:"+ inputPais);
+
+            var inputEdad = document.getElementById("edad").value;
+            localStorage.setItem("edad", inputEdad);
+            console.log("edad:"+ inputEdad);
+
+            var inputOjos = document.getElementById("ojos").value;
+            localStorage.setItem("ojos", inputOjos);
+            console.log("ojos:"+ inputOjos);
+
+            var inputPelo = document.getElementById("pelo").value;
+            localStorage.setItem("pelo", inputPelo);
+            console.log("pelo:"+ inputPelo);
+
+            var inputRasgo1 = document.getElementById("rasgo1").value;
+            localStorage.setItem("rasgo1", inputRasgo1);
+            console.log("rasgo 1:"+ inputRasgo1);
+
+            var inputRasgo2 = document.getElementById("rasgo2").value;
+            localStorage.setItem("rasgo2", inputRasgo2);
+            console.log("rasgo 2:"+ inputRasgo2);
+
+            var inputRasgo3 = document.getElementById("rasgo3").value;
+            localStorage.setItem("rasgo3", inputRasgo3);
+            console.log("rasgo3:"+ inputRasgo3);
+
+            var inputRasgo4 = document.getElementById("rasgo4").value;
+            localStorage.setItem("rasgo4", inputRasgo4);
+            console.log("Rasgo4:"+ inputRasgo4);
+
+            var inputOficio = document.getElementById("oficio").value;
+            localStorage.setItem("oficio", inputOficio);
+            console.log("Oficio:"+ inputOficio);
+
+            var inputCreencia = document.getElementById("creencias").value;
+            localStorage.setItem("creencias", inputCreencia);
+            console.log("creencias:"+ inputCreencia);
+
+            var ele = document.getElementsByName('espTArmas'); 
+                            for(i = 0; i < ele.length; i++) { 
+                  if(ele[i].checked) 
+                  var inputArmaRango = ele[i].value; 
+              } 
+            localStorage.setItem("armarango", inputArmaRango);
+            console.log("armarango:"+ inputArmaRango);
+
+            var inputArmaNom = document.getElementById("espArma").value;
+            localStorage.setItem("arma", inputArmaNom);
+            console.log("arma:"+ inputArmaNom);
+
+            
+        }
+    </script>
+
+</body>
+
+</html>
