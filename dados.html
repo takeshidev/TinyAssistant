@@ -27,31 +27,35 @@
             <div class="menuitem" id="aventuras"><a href="generadoraventuras">Generador Aventuras</a></div>
             <div class="menuitem" id="cerrar"><a href="cerrarsesion.html">Cerrar sesion</a></div>
         </nav>
-        <div id="perfil">
-            <div id="sihayusuario">
-                Hola <span id="nomuser"></span>
+        <section class="row">
+            <div class="boxUsuario" id="perfil">
+                <div id="sihayusuario">
+                    Hola <span id="nomuser"></span>
+                </div>
+                <div id="nohayusuario">
+                    <h2>Login</h2>
+                    <p>Ingresa tu nombre</p>
+                    <form id="formusuario">
+                        <input type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+                        <button type="button" onclick="login()">Login</button>
+                    </form>
+                </div>
             </div>
-            <div id="nohayusuario">
-                <form id="formusuario">
-                    Usuario: <input type="text" name="usuario" id="usuario" required>
-                    <button type="button" onclick="login()">Login</button>
-                </form>
-            </div>
-        </div>
+        </section>
         <!-- FIN SECCION CABECERA-->
         <main>
             <script src="js/dados.js"></script>
             
             <div class="dados">
-                <button onclick="lanzadado(1)">1d6</button>
-                <button onclick="lanzadado(2)">2d6</button>
-                <button onclick="lanzadado(3)">3d6</button>
+                <button onclick="lanzadado(1)" id="b1">1d6</button>
+                <button onclick="lanzadado(2)" id="b2">2d6</button>
+                <button onclick="lanzadado(3)" id="b3">3d6</button>
 
             </div>
             <div id="resultadodados">
-                <div id="d1">Dado1:</div>
-                <div id="d2">Dado2:</div>
-                <div id="d3">Dado3:</div>
+                <div id="d1"></div>
+                <div id="d2"></div>
+                <div id="d3"></div>
                 <div id="resultadotest">-</div>
             </div>
 
