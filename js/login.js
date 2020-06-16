@@ -5,17 +5,8 @@ function login() {
     console.log(user);
     document.getElementById("nomuser").innerHTML = user;
     document.getElementById("nohayusuario").hidden = true;
-    document.getElementById("sihayusuario").hidden = true;
+    document.getElementById("sihayusuario").hidden = false;
 }
-
-
-
-$(function() { //al cargar el documento...
-
-    verificarusuario();
-
-});
-
 
 function verificarusuario() {
     console.log("Verificando usuario")
@@ -36,3 +27,7 @@ function cerrarsesion() {
     console.log("Cerrando sesion");
     location.reload();
 }
+
+
+
+verificarusuario();
