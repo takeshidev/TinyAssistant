@@ -12,32 +12,35 @@
     <!-- Referencias particulares-->
 </head>
 
-<body>
+<body onload="verificarusuario()">
     <div id="contenedor">
         <!-- INICIO SECCION CABECERA va en todas las paginas-->
         <header>
             <h1>Tiny Assistant</h1>
             <h2>Asistente para Tiny Dungeon</h2>
         </header>
-        <script></script>
         <nav>
-            <div class="menuitem" id="inicio"><a href="index.html">Inicio</a></div>
-            <div class="menuitem" id="quienes"><a href="quienes.html">Quienes somos</a></div>
-            <div class="menuitem" id="personajes"><a href="generadorpersonajes.html">Generador Personajes</a></div>
-            <div class="menuitem" id="aventuras"><a href="generadoraventuras">Generador Aventuras</a></div>
-            <div class="menuitem" id="cerrar"><a href="cerrarsesion.html">Cerrar sesion</a></div>
+            <a class="menuitem" id="inicio" href="index.html">Inicio</a>
+            <a class="menuitem" id="quienes" href="quienes.html">Quienes somos</a>
+            <a class="menuitem" id="personajes" href="generadorpersonajes.html">Generador Personajes</a>
+            <a class="menuitem" id="aventuras" href="generadoraventuras">Generador Aventuras</a>
+            <a class="menuitem" id="cerrar" href="cerrarsesion.html">Cerrar sesion</a>
         </nav>
-        <div id="perfil">
-            <div id="sihayusuario">
-                Hola <span id="nomuser"></span>
+        <section class="row">
+            <div class="boxUsuario" id="perfil">
+                <div id="sihayusuario">
+                    Hola <span id="nomuser"></span>
+                </div>
+                <div id="nohayusuario">
+                    <h2>Login</h2>
+                    <p>Ingresa tu nombre</p>
+                    <form id="formusuario">
+                        <input type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+                        <button type="button" onclick="login()">Login</button>
+                    </form>
+                </div>
             </div>
-            <div id="nohayusuario">
-                <form id="formusuario">
-                    Usuario: <input type="text" name="usuario" id="usuario" required>
-                    <button type="button" onclick="login()">Login</button>
-                </form>
-            </div>
-        </div>
+        </section>
         <!-- FIN SECCION CABECERA-->
 
 
@@ -45,8 +48,7 @@
     </div>
     <!-- FOOTER va en todas las paginas-->
     <footer>
-        &copy; Tiny Assistant - 2020
-        <div>Siguenos en redes sociales</div>
+        <iframe src="iframes/footer.html"></iframe>
     </footer>
 
 
