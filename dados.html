@@ -45,8 +45,11 @@
         <!-- FIN SECCION CABECERA-->
         <main>
             <script src="js/dados.js"></script>
-            
+            <script src="js/rescatadatos.js" defer></script>
+
+            <!-- INICIO DADOS-->
             <div class="dados">
+                <h3>Lanza dados!</h3>
                 <button onclick="lanzadado(1)" id="b1">1d6</button>
                 <button onclick="lanzadado(2)" id="b2">2d6</button>
                 <button onclick="lanzadado(3)" id="b3">3d6</button>
@@ -58,6 +61,77 @@
                 <div id="d3"></div>
                 <div id="resultadotest">-</div>
             </div>
+            <!-- FIN DADOS-->
+
+            <!-- MUESTRA PERSONAJE-->
+            
+            <p></p>
+            <h3>Tu personaje:</h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Nombre: </td>
+                        <td id="nombre">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Pais: </td>
+                        <td id="pais"></td>
+                    </tr>
+                    <tr>
+                        <td>Edad: </td>
+                        <td id="edad">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Ojos: </td>
+                        <td id="ojos">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Pelo: </td>
+                        <td id="pelo">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Oficio familiar: </td>
+                        <td id="oficio">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Creencias:</td>
+                        <td id="creencias">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Rasgo 1: </td>
+                        <td id="rasgo1">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Rasgo 2: </td>
+                        <td id="rasgo2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Rasgo 3: </td>
+                        <td id="rasgo3">&nbsp;</td>
+                    </tr>
+                    <tr id="hiddRasgo4" hidden>
+                        <td>Rasgo 4: </td>
+                        <td id="rasgo4">&nbsp;</td>
+                    </tr>
+                    <tr id="hiddSolimar" hidden>
+                        <td>Rasgo Solimar: </td>
+                        <td id="rasgosoli">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Herencia: </td>
+                        <td id="herencia">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Especialidad en armas: </td>
+                        <td id="armarango">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Arma favorita: </td>
+                        <td id="armafav">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+
 
 
 
@@ -75,5 +149,6 @@
 
 
 </body>
+
 
 </html>
