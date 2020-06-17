@@ -1,0 +1,19 @@
+.contenedor {
+    align-content: center;
+    justify-content: center;
+    display: block;
+    text-align: justify;
+}
+.juego {
+    align-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+.contacto{
+    align-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+ 
