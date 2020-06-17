@@ -4,55 +4,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleBar.css">
-    <title>Quienes Somos</title>
+    <title>Tiny Assistant</title>
+    <!-- Referencias estandard-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/login.js" defer></script>
+    <link rel="stylesheet" href="css/slidebars.css">
+    <script src="js/slidebars.js"></script>
+    <script src="js/menu.js" defer></script>
+    <script src="https://kit.fontawesome.com/0a0085a95e.js" crossorigin="anonymous"></script>
+    <!-- Referencias particulares-->
+    <link rel="stylesheet" href="css/styleQuienes.css">
 </head>
 
-<body>
-    <h1>Quien Somos</h1>
-    <h2>Protagonistas</h2>
-    <section class="protagonistas">
-        <div class="caras">
-            <h3>Takeshi Take</h3>
-            <img src="" alt="">
-            <div class="texto-caras">
-                <p>Director de proyecto, encargado del diseño del código JavaScript y HTML.</p>
+<body onload="verificarusuario()">
+    <div off-canvas="id-1 left overlay">
+        <nav>
+            <div id="menu">
+                <p><i class="fas fa-shield-alt"></i> Tiny Asisstant</p>
+                <div class="link"><a href="index.html"><i class="far fa-flag"></i> Inicio</a></div>
+                <div class="link"><a href="Acercade.html"><i class="fas fa-info-circle"></i> Acerca de</a></div>
+                <div class="link"><a href="quienes.html"><i class="fas fa-people-carry"></i> Quienes somos</a></div>
+                <div class="link"><a href="PersonajesGEN.html"><i class="fas fa-user-plus"></i> Generador Personajes</a></div>
+                <div class="link"><a href="generadoraventuras.html"><i class="fas fa-scroll"></i> Generador Aventuras</a></div>
+                <div class="link"><a href="cerrarsesion.html"><i class="fas fa-door-open"></i >Cerrar sesion</a></div>
             </div>
-        </div>
-        <div class="caras">
-            <h3>Cristobal Latorre</h3>
-            <img src="" alt="">
-            <div class="texto-caras">
-                <p>Encargado del diseño CSS.</p>
-            </div>
-        </div>
-        <div class="caras">
-            <h3>Andrés Barroso</h3>
-            <img src="" alt="">
-            <div class="texto-caras">
-                <p>Creador de contenido y apoyo en códigos JavaScript y HTML.</p>
-            </div>
-        </div>
-        <div class="caras">
-            <h3>Javier Leiva</h3>
-            <img src="" alt="">
-            <div class="texto-caras">
-                <p>Creador de contenido y apoyo en códigos JavaScript y HTML.</p>
-            </div>
-        </div>
-    </section>
+        </nav>
+    </div>
 
-    <section class="MV">
-        <section class="mision">
-            <h2>Misión</h2>
-            <p>Queremos falicitar el entendimiento de Tiny Dungeons para que las partidas sean cada vez más desafiantes.
-            </p>
+    <div canvas="container">
+        <!-- INICIO SECCION CABECERA va en todas las paginas-->
+        <header>
+            <h1><i class="fas fa-shield-alt"></i> Tiny Assistant</h1>
+            <h2>Asistente para Tiny Dungeon</h2>
+            <button class="js-toggle-left-slidebar btnMenu"><i class="fas fa-bars"></i> Menu </button>
+        </header>
+        <section class="row">
+            <div class="boxUsuario" id="perfil">
+                <div id="sihayusuario">
+                    Hola <span id="nomuser"></span>
+                </div>
+                <div id="nohayusuario">
+                    <h2>Login</h2>
+                    <p>Ingresa tu nombre</p>
+                    <form id="formusuario">
+                        <input type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+                        <button type="button" onclick="login()">Login</button>
+                    </form>
+                </div>
+            </div>
         </section>
-        <section class="vision">
-            <h2>Visión</h2>
-            <p>Pretendemos ser la página oficial de asistencia de Tiny Dungeons.</p>
+
+        <!-- FIN SECCION CABECERA-->
+
+        <h1>Quien Somos</h1>
+        <h2>Colaboradores</h2>
+        <section class="protagonistas">
+            <div class="col-s-5 caras">
+                <img src="img/take.jfif" alt="">
+                <div class="texto-caras">
+                    <h3>Takeshi Kita</h3>
+                    <p>Director de proyecto, encargado del diseño del código JavaScript y HTML.</p>
+                </div>
+            </div>
+            <div class="col-s-5 caras">
+                <img src="img/tobal.jfif" alt="">
+                <div class="texto-caras">
+                    <h3>Cristobal Latorre</h3>
+                    <p>Encargado del diseño CSS.</p>
+                </div>
+            </div>
+            <div class="col-s-5 caras">
+                <img src="img/willy.jfif" alt="">
+                <div class="texto-caras">
+                    <h3>Andrés Barroso</h3>
+                    <p>Creador de contenido y apoyo en códigos JavaScript y HTML.</p>
+                </div>
+            </div>
+            <div class="col-s-5 caras">
+                <img src="img/javier.jpeg" alt="">
+                <div class="texto-caras">
+                    <h3>Javier Leiva</h3>
+                    <p>Creador de contenido y apoyo en códigos JavaScript y HTML.</p>
+                </div>
+            </div>
         </section>
-    </section>
+
+        <section class="MV">
+            <section class="col-s-5 mision">
+                <h2>Misión</h2>
+                <p>Queremos falicitar el entendimiento de Tiny Dungeons para que las partidas sean cada vez más desafiantes.
+                </p>
+            </section>
+            <section class="col-s-5 vision">
+                <h2>Visión</h2>
+                <p>Pretendemos ser la página oficial de asistencia de Tiny Dungeons.</p>
+            </section>
+        </section>
+        <footer>
+            <p>&copy; Tiny Assistant - 2020</p>
+            <p>Siguenos en redes sociales</p>
+            <div class="social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-google-plus"></i></a>
+            </div>
+        </footer>
+    </div>
+
 </body>
 
 </html>

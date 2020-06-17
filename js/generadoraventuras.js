@@ -132,7 +132,7 @@ function generateAdventure3() {
     contenedor.appendChild(crearParrafo("Nota: Si estáis usando el sistema de PX, llevar a Nelos vivo a la aldea supone 1PX extra y el agradecimiento tanto del muchacho como de Alia. Si rechazan la recompensa de los campesinos, puedes darles otro PX extra por su nobleza."));
 }
 
-function randomeAdventure() {
+function randomAdventure() {
     var randomIndex = Math.floor(Math.random() * 3);
     var functionArray = [generateAdventure1, generateAdventure2, generateAdventure3];
     functionArray[randomIndex]();

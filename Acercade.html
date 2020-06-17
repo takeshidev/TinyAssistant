@@ -4,30 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleAcercaDe.css">
-    <title>Menu</title>
-
+    <title>Tiny Assistant</title>
+    <!-- Referencias estandard-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/login.js" defer></script>
+    <link rel="stylesheet" href="css/slidebars.css">
+    <script src="js/slidebars.js"></script>
+    <script src="js/menu.js" defer></script>
+    <script src="https://kit.fontawesome.com/0a0085a95e.js" crossorigin="anonymous"></script>
+    <!-- Referencias particulares-->
+    <link rel="stylesheet" href="css/styleAcercaDe.css">
 </head>
 
-<body>
+<body onload="verificarusuario()">
+    <div off-canvas="id-1 left overlay">
+        <nav>
+            <div id="menu">
+                <p><i class="fas fa-shield-alt"></i> Tiny Asisstant</p>
+                <div class="link"><a href="index.html"><i class="far fa-flag"></i> Inicio</a></div>
+                <div class="link"><a href="Acercade.html"><i class="fas fa-info-circle"></i> Acerca de</a></div>
+                <div class="link"><a href="quienes.html"><i class="fas fa-people-carry"></i> Quienes somos</a></div>
+                <div class="link"><a href="PersonajesGEN.html"><i class="fas fa-user-plus"></i> Generador Personajes</a></div>
+                <div class="link"><a href="generadoraventuras.html"><i class="fas fa-scroll"></i> Generador Aventuras</a></div>
+                <div class="link"><a href="cerrarsesion.html"><i class="fas fa-door-open"></i >Cerrar sesion</a></div>
+            </div>
+        </nav>
+    </div>
 
-    <section class="contenedor">
-        <section class="juego">
-            <h2 class="titulo">Propósito</h2>
-            <p></p>
-            <p>Esta página fue creada con el propósito de entregar algunas ideas de como enfrentar al juego y que
-                aquellas técnicas sean desarrolladas, ya sea de la misma manera o con algún factor distintivo que
-                genere un juego más desafiante. Pero más allá de todo, es importante disfrutar del juego y aprovechar de generar discusión entorno a las
-                nuevas habiliadades o desafíos que la página permita crear.</p>
+    <div canvas="container">
+        <!-- INICIO SECCION CABECERA va en todas las paginas-->
+        <header>
+            <h1><i class="fas fa-shield-alt"></i> Tiny Assistant</h1>
+            <h2>Asistente para Tiny Dungeon</h2>
+            <button class="js-toggle-left-slidebar btnMenu"><i class="fas fa-bars"></i> Menu </button>
+        </header>
+        <section class="row">
+            <div class="boxUsuario" id="perfil">
+                <div id="sihayusuario">
+                    Hola <span id="nomuser"></span>
+                </div>
+                <div id="nohayusuario">
+                    <h2>Login</h2>
+                    <p>Ingresa tu nombre</p>
+                    <form id="formusuario">
+                        <input type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+                        <button type="button" onclick="login()">Login</button>
+                    </form>
+                </div>
+            </div>
         </section>
-        <section class="contacto">
-            <h2 class="titulo">Contacto</h2>
-            <p>Número:</p>
-            <p>Email:</p>
-            <p>Dirección:</p>
+        <section class="row">
+
+            <section class="contenedor col-7 col-s-7 textos">
+                <h2>Acerca del Sitio</h2>
+                <p>Tiny Assistant es un asistente para facilitar tu inmersión en el magico mundo de Tiny Dungeons.</p>
+
+                <p>Tiny Assistant cuenta con un sin fin de herramientas que te ayudarán a llevar control de las multiples mecanicas que Tiny Dungeons presenta, además te invitamos a registrarte en nuestra plataforma para que puedas guardar tus personajes,
+                    tu inventario, tus estadisticas y todo el resto del progreso de cada una de tus partidas.</p>
+
+                <p>Dentro de las herramientas que ofrece Tiny Assistant, podrás encontrar:</p>
+
+                <ul>
+                    <li>Generador de Personaje</li>
+                    <li>Dados para determinar tu desempeño</li>
+                    <li>Generador de Aventura</li>
+                </ul>
+
+                <h2>Acerca de Tiny Dungeons</h2>
+
+                <p>Para utilizar Tiny Assistant, es necesario que conozcas Tiny Dungeons.</p>
+
+                <p>Tiny Dungeon es un juego de rol minimalista diseñado para proporcionar una experiencia de juego satisfactoria sin necesidad de rodearse de montañas de libros de reglas. No encontrarás clases, niveles o puntos de experiencia en Tiny Dungeon
+                    – en lugar de eso, crearás personajes que crecerán mediante el juego y la interpretación.</p>
+
+                <p>Aunque Tiny Dungeon asume que sus jugadores están familiarizados con el concepto de juego de rol, tanto los veteranos como los novatos, jóvenes o adultos, podrán aprender fácilmente las mecánicas básicas de este juego.</p>
+
+                <p>Accede al sitio de los creadores haciendo click <a href="http://www.gallantknightgames.com/" target="_blank">AQUI</a>.</p>
+            </section>
 
         </section>
-    </section>
+        <!-- FIN SECCION CABECERA-->
+
+
+
+        <footer>
+            <p>&copy; Tiny Assistant - 2020</p>
+            <p>Siguenos en redes sociales</p>
+            <div class="social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-google-plus"></i></a>
+            </div>
+        </footer>
+    </div>
 
 </body>
 
