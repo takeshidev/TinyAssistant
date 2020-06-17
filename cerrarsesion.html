@@ -8,28 +8,43 @@
     <!-- Referencias estandard-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="js/login.js" defer></script>
+    <link rel="stylesheet" href="css/slidebars.css">
+    <script src="js/slidebars.js"></script>
+    <script src="js/menu.js" defer></script>
+    <script src="https://kit.fontawesome.com/0a0085a95e.js" crossorigin="anonymous"></script>
     <!-- Referencias particulares-->
 </head>
 
 <body onload="verificarusuario()">
-    <div id="contenedor">
+    <div off-canvas="id-1 left reveal" >
+        <nav>
+            <div id="menu">
+            <p><i class="fas fa-shield-alt"></i> Tiny Asisstant</p>
+            <div class="link"><a href="index.html"><i class="far fa-flag"></i> Inicio</a></div>
+            <div class="link"><a href="quienes.html"><i class="fas fa-people-carry"></i> Quienes somos</a></div>
+            <div class="link"><a href="PersonajesGEN.html"><i class="fas fa-user-plus"></i> Generador Personajes</a></div>
+            <div class="link"><a href="generadoraventuras.html"><i class="fas fa-scroll"></i> Generador Aventuras</a></div>
+            <div class="link"><a href="cerrarsesion.html"><i class="fas fa-door-open"></i >Cerrar sesion</a></div>
+            </div>
+        </nav>  
+    </div> 
+
+
+    <div canvas="container">
+
         <!-- INICIO SECCION CABECERA va en todas las paginas-->
         <header>
-            <h1>Tiny Assistant</h1>
+            <h1><i class="fas fa-shield-alt"></i> Tiny Assistant</h1>
             <h2>Asistente para Tiny Dungeon</h2>
+            <button class="js-toggle-left-slidebar">Menu</button>
         </header>
-        <nav>
-            <a class="menuitem" id="inicio" href="index.html">Inicio</a>
-            <a class="menuitem" id="quienes" href="quienes.html">Quienes somos</a>
-            <a class="menuitem" id="personajes" href="generadorpersonajes.html">Generador Personajes</a>
-            <a class="menuitem" id="aventuras" href="generadoraventuras">Generador Aventuras</a>
-            <a class="menuitem" id="cerrar" href="cerrarsesion.html">Cerrar sesion</a>
-        </nav>
         <section class="row">
             <div class="boxUsuario" id="perfil">
                 <div id="sihayusuario">
-                    Hola <span id="nomuser"></span>
+                    Hola <span id="nomuser"></span><br>
+                    <button id="cierrasesion" onclick="cerrarsesion()"><i class="fas fa-door-open"></i> Cerrar sesion</button>
                 </div>
                 <div id="nohayusuario">
                     <h2>Login</h2>
@@ -39,19 +54,23 @@
                         <button type="button" onclick="login()">Login</button>
                     </form>
                 </div>
+                
             </div>
-        </section>
+    </section>
         <!-- FIN SECCION CABECERA-->
-
-
-        <button id="cierrasesion" onclick="cerrarsesion()">Cerrar sesion</button>
-    </div>
+    
     <!-- FOOTER va en todas las paginas-->
     <footer>
-        <iframe src="iframes/footer.html"></iframe>
+        &copy; Tiny Assistant - 2020
+        <div>Siguenos en redes sociales</div>
+        <div class="social">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-google-plus"></i></a>
+        </div>
     </footer>
-
-
+</div>
 </body>
 
 </html>

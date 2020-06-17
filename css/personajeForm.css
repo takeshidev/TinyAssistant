@@ -8,13 +8,13 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 /* FORMULARIO CREACION DE PERSONAJE */
-.formPersonaje{
+form{
     margin: auto;
     display: grid;
-    height: 60vh;
+    height: 800px;
     width: 600px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr .4fr .5fr;
+    grid-template-rows: 1fr .1fr .1fr .1fr;
     grid-template-areas: 
         "Gpersonaje Gpersonaje"
         "Gherencia GeArmas"
@@ -26,11 +26,17 @@ body{
     padding-bottom: 5px;
 }
 .formPersonaje section h2{
+    margin: 10px auto;
     text-align: center;
+    font-size: 1.2em;
+}
+.txt{
+    padding: 3px;
 }
 /* SECCION PERSONAJE */
 .Gpersonaje{
     background-color: #a7ffeb;
+    border-radius: 10px;
     grid-area: Gpersonaje;
 
     display: flex;
@@ -53,6 +59,7 @@ body{
 /* SECCION HERENCIA */
 .Gherencia{
     background-color: #84ffff;
+    border-radius: 10px;
     grid-area: Gherencia;
 
     display: flex;
@@ -63,20 +70,84 @@ body{
 .Gherencia select{
     padding: 5px;
 }
-
+.rSalimar{
+    margin-top: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+.rSalimar h3{
+    font-size: 1em;
+    font-weight: 700;
+    text-align: center;
+}
+.rSalimar div{
+    display: flex;
+    flex-flow: column-reverse wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.rSalimar div label{
+    font-size: .8em;
+    font-weight: 300;
+}
 /* SECCION ESPECIALIDAD ARMAS*/
 .GeArmas{
     background-color: #84edff;
+    border-radius: 10px;
     grid-area: GeArmas;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+.GeArmas div{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.GeArmas div label{
+    font-size: .8em;
+    font-weight: 300;
+    text-align: center;
+}
+.GeArmas>input{
+    margin-top: 10px;
 }
 /* SECCION RASGOS */
 .Grasgos{
     background-color: #84b9ff;
-    grid-area: Grasgos; 
+    border-radius: 10px;
+    grid-area: Grasgos;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.Grasgos .rasgo{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.Grasgos .rasgo label{
+    font-weight: 300;
 }
 /* SECCION BTN CREAR */
 .btnCrear{
     grid-area: btnCrear;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 20px;
+    border-radius: 40px;
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 textarea{
     resize: none;
@@ -87,7 +158,7 @@ textarea{
         height: 100vh;
         width: 100vw;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr .5fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas: 
         "Gpersonaje"
         "Gherencia"
@@ -96,6 +167,12 @@ textarea{
         "btnCrear";
     }
     .formPersonaje section div{
+        padding: 5px 10px;
+    }
+    .GeArmas{
+        padding: 5px 10px;
+    }
+    .Grasgos{
         padding: 5px 10px;
     }
 }

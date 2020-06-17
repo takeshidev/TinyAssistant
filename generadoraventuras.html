@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiny Assistant - Generador Aventuras</title>
+    <!-- Referencias estandard-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/login.js" defer></script>
+    <link rel="stylesheet" href="css/slidebars.css">
+    <script src="js/slidebars.js"></script>
+    <script src="js/menu.js" defer></script>
+    <script src="https://kit.fontawesome.com/0a0085a95e.js" crossorigin="anonymous"></script>
+    <!-- Referencias particulares-->
+</head>
+
+<body onload="verificarusuario()">
+    <div off-canvas="id-1 left reveal" >
+        <nav>
+            <div id="menu">
+            <p><i class="fas fa-shield-alt"></i> Tiny Asisstant</p>
+            <div class="link"><a href="index.html"><i class="far fa-flag"></i> Inicio</a></div>
+            <div class="link"><a href="quienes.html"><i class="fas fa-people-carry"></i> Quienes somos</a></div>
+            <div class="link"><a href="PersonajesGEN.html"><i class="fas fa-user-plus"></i> Generador Personajes</a></div>
+            <div class="link"><a href="generadoraventuras.html"><i class="fas fa-scroll"></i> Generador Aventuras</a></div>
+            <div class="link"><a href="cerrarsesion.html"><i class="fas fa-door-open"></i >Cerrar sesion</a></div>
+            </div>
+        </nav>  
+    </div> 
+    
+    <div canvas="container">
+
+        <!-- INICIO SECCION CABECERA va en todas las paginas-->
+        <header>
+            <h1><i class="fas fa-scroll"></i> Generador de Aventuras</h1>
+            <h2>Asistente para Tiny Dungeon</h2>
+            <button class="js-toggle-left-slidebar"><i class="fas fa-bars"></i> Menu </button>
+        </header>
+        <section class="row">
+            <div class="boxUsuario" id="perfil">
+                <div id="sihayusuario">
+                    Hola <span id="nomuser"></span>
+                </div>
+                <div id="nohayusuario">
+                    <h2>Login</h2>
+                    <p>Ingresa tu nombre</p>
+                    <form id="formusuario">
+                        <input type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+                        <button type="button" onclick="login()">Login</button>
+                    </form>
+                </div>
+                <button id="cierrasesion" onclick="cerrarsesion()">Cerrar sesion</button>
+            </div>
+        </section>
+        <!-- FIN SECCION CABECERA-->
+        <section class="row">
+            <div class="contenedor col-8 presentacion">
+                <h2>Generador de Aventuras</h2>
+                <p>¿Crees que ser un Aventurero es duro? Bueno, la vida de un Director de Juego tampoco es facil. Se espera de ti que cuentes una historia irresistible, que interpretes los papeles de múltiples personajes no jugadores (NPC), que crees enemigos,
+                    lleves el combate, arbitres las reglas… la lista continúa y continúa, pero no te asustes. Estamos aquí para ayudar.</p>
+                <p>¡En esta sección, te presentamos algunas ideas para que empieces a imaginar tus viajes!</p>
+                <div>
+                    <button type="submit" id="beganButton" onclick="randomeAdventure()">Generar Aventura</button>
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <div id="adventure" class="contenedor col-8 adventure"></div>
+            <script src="js/generadoraventuras.js"></script>
+        </section>
+
+        <!-- FOOTER va en todas las paginas-->
+        <footer>
+            &copy; Tiny Assistant - 2020
+            <div>Siguenos en redes sociales</div>
+            <div class="social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-google-plus"></i></a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
