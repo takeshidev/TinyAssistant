@@ -1,10 +1,10 @@
 function exito() {
     document.getElementById("resultadotest").innerHTML = "Lanzando...";
-    setTimeout(function(){document.getElementById("resultadotest").innerHTML = "Exito"} , 700);
+    setTimeout(function(){document.getElementById("resultadotest").innerHTML = "Acción exitosa!!!"} , 700);
 }
 function fail() {
     document.getElementById("resultadotest").innerHTML = "Lanzando...";
-    setTimeout(function(){document.getElementById("resultadotest").innerHTML = "Exito"} , 700);
+    setTimeout(function(){document.getElementById("resultadotest").innerHTML = "Fallaste!"} , 700);
 }
 
 
