@@ -1,101 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-*{
+* {
     border: 0;
     margin: 0;
     border-style: none;
 }
-body{
+
+body {
     font-family: 'Roboto', sans-serif;
 }
+
+
 /* FORMULARIO CREACION DE PERSONAJE */
-form{
+
+.formPersonaje {
     margin: auto;
     display: grid;
     height: 800px;
     width: 600px;
+    background-image: url("../img/papiro.jpg");
+    background-size: cover;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr .1fr .1fr .1fr;
-    grid-template-areas: 
-        "Gpersonaje Gpersonaje"
-        "Gherencia GeArmas"
-        "Grasgos Grasgos"
-        "btnCrear btnCrear";
+    grid-template-areas: "Gpersonaje Gpersonaje" "Gherencia GeArmas" "Grasgos Grasgos" "btnCrear btnCrear";
     gap: 0.2rem;
 }
-.formPersonaje section div{
+
+.formPersonaje section div {
     padding-bottom: 5px;
 }
-.formPersonaje section h2{
+
+.formPersonaje section h2 {
     margin: 10px auto;
     text-align: center;
     font-size: 1.2em;
 }
-.txt{
+
+.txt {
     padding: 3px;
 }
+
+
 /* SECCION PERSONAJE */
-.Gpersonaje{
-    background-color: #a7ffeb;
+
+.Gpersonaje {
+    /*background-color: hsla(41, 98%, 58%, 0.6);*/
     border-radius: 10px;
     grid-area: Gpersonaje;
-
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
     align-content: center;
 }
-.personaje1 div{
+
+.personaje1 div {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-evenly;
     align-content: center;
 }
-.personaje2{
+
+.personaje2 {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-evenly;
     align-content: center;
 }
+
+
 /* SECCION HERENCIA */
-.Gherencia{
-    background-color: #84ffff;
+
+.Gherencia {
+    /*background-color: hsla(0, 70%, 41%, 0.60);*/
     border-radius: 10px;
     grid-area: Gherencia;
-
     display: flex;
     flex-flow: column wrap;
     justify-content: space-evenly;
     align-items: center;
 }
-.Gherencia select{
+
+.Gherencia select {
     padding: 5px;
 }
-.rSalimar{
+
+.rSalimar {
     margin-top: 10px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 }
-.rSalimar h3{
+
+.rSalimar h3 {
     font-size: 1em;
     font-weight: 700;
     text-align: center;
 }
-.rSalimar div{
+
+.rSalimar div {
     display: flex;
     flex-flow: column-reverse wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-.rSalimar div label{
+
+.rSalimar div label {
     font-size: .8em;
     font-weight: 300;
 }
+
+
 /* SECCION ESPECIALIDAD ARMAS*/
-.GeArmas{
-    background-color: #84edff;
+
+.GeArmas {
+    /*background-color: hsla(0, 70%, 41%, 0.60);*/
     border-radius: 10px;
     grid-area: GeArmas;
     display: flex;
@@ -103,44 +122,52 @@ form{
     justify-content: center;
     align-content: flex-start;
 }
-.GeArmas div{
+
+.GeArmas div {
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
 }
-.GeArmas div label{
+
+.GeArmas div label {
     font-size: .8em;
     font-weight: 300;
     text-align: center;
 }
-.GeArmas>input{
+
+.GeArmas>input {
     margin-top: 10px;
 }
+
+
 /* SECCION RASGOS */
-.Grasgos{
-    background-color: #84b9ff;
+
+.Grasgos {
+    /*background-color: hsla(228, 61%, 26%, 0.60);*/
     border-radius: 10px;
     grid-area: Grasgos;
-
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 }
 
-.Grasgos .rasgo{
+.Grasgos .rasgo {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-content: center;
 }
 
-.Grasgos .rasgo label{
+.Grasgos .rasgo label {
     font-weight: 300;
 }
+
+
 /* SECCION BTN CREAR */
-.btnCrear{
+
+.btnCrear {
     grid-area: btnCrear;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     padding: 20px;
@@ -149,30 +176,29 @@ form{
     text-transform: uppercase;
     font-weight: 700;
 }
-textarea{
+
+textarea {
     resize: none;
 }
+
+
 /* RESPONSIVE */
-@media only screen and (max-width: 600px){
-    .formPersonaje{
+
+@media only screen and (max-width: 600px) {
+    .formPersonaje {
         height: 100vh;
         width: 100vw;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-areas: 
-        "Gpersonaje"
-        "Gherencia"
-        "GeArmas"
-        "Grasgos"
-        "btnCrear";
+        grid-template-areas: "Gpersonaje" "Gherencia" "GeArmas" "Grasgos" "btnCrear";
     }
-    .formPersonaje section div{
+    .formPersonaje section div {
         padding: 5px 10px;
     }
-    .GeArmas{
+    .GeArmas {
         padding: 5px 10px;
     }
-    .Grasgos{
+    .Grasgos {
         padding: 5px 10px;
     }
 }

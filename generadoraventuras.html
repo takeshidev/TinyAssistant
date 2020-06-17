@@ -18,26 +18,26 @@
 </head>
 
 <body onload="verificarusuario()">
-    <div off-canvas="id-1 left reveal" >
+    <div off-canvas="id-1 left overlay">
         <nav>
             <div id="menu">
-            <p><i class="fas fa-shield-alt"></i> Tiny Asisstant</p>
-            <div class="link"><a href="index.html"><i class="far fa-flag"></i> Inicio</a></div>
-            <div class="link"><a href="quienes.html"><i class="fas fa-people-carry"></i> Quienes somos</a></div>
-            <div class="link"><a href="PersonajesGEN.html"><i class="fas fa-user-plus"></i> Generador Personajes</a></div>
-            <div class="link"><a href="generadoraventuras.html"><i class="fas fa-scroll"></i> Generador Aventuras</a></div>
-            <div class="link"><a href="cerrarsesion.html"><i class="fas fa-door-open"></i >Cerrar sesion</a></div>
+                <p><i class="fas fa-shield-alt"></i> Tiny Asisstant</p>
+                <div class="link"><a href="index.html"><i class="far fa-flag"></i> Inicio</a></div>
+                <div class="link"><a href="quienes.html"><i class="fas fa-people-carry"></i> Quienes somos</a></div>
+                <div class="link"><a href="PersonajesGEN.html"><i class="fas fa-user-plus"></i> Generador Personajes</a></div>
+                <div class="link"><a href="generadoraventuras.html"><i class="fas fa-scroll"></i> Generador Aventuras</a></div>
+                <div class="link"><a href="cerrarsesion.html"><i class="fas fa-door-open"></i >Cerrar sesion</a></div>
             </div>
-        </nav>  
-    </div> 
-    
+        </nav>
+    </div>
+
     <div canvas="container">
 
         <!-- INICIO SECCION CABECERA va en todas las paginas-->
         <header>
             <h1><i class="fas fa-scroll"></i> Generador de Aventuras</h1>
             <h2>Asistente para Tiny Dungeon</h2>
-            <button class="js-toggle-left-slidebar"><i class="fas fa-bars"></i> Menu </button>
+            <button class="js-toggle-left-slidebar btnMenu"><i class="fas fa-bars"></i> Menu </button>
         </header>
         <section class="row">
             <div class="boxUsuario" id="perfil">
@@ -57,25 +57,25 @@
         </section>
         <!-- FIN SECCION CABECERA-->
         <section class="row">
-            <div class="contenedor col-8 presentacion">
-                <h2>Generador de Aventuras</h2>
+            <div class="contenedor col-8 textos">
+                <h1>Generador de Aventuras</h1>
                 <p>¿Crees que ser un Aventurero es duro? Bueno, la vida de un Director de Juego tampoco es facil. Se espera de ti que cuentes una historia irresistible, que interpretes los papeles de múltiples personajes no jugadores (NPC), que crees enemigos,
                     lleves el combate, arbitres las reglas… la lista continúa y continúa, pero no te asustes. Estamos aquí para ayudar.</p>
                 <p>¡En esta sección, te presentamos algunas ideas para que empieces a imaginar tus viajes!</p>
-                <div>
-                    <button type="submit" id="beganButton" onclick="randomeAdventure()">Generar Aventura</button>
+                <div class="textos">
+                    <button type="submit" id="beganButton" onclick="randomAdventure() ">Generar Aventura</button>
                 </div>
             </div>
         </section>
         <section class="row">
-            <div id="adventure" class="contenedor col-8 adventure"></div>
+            <div id="adventure" class="contenedor col-8 textos"></div>
             <script src="js/generadoraventuras.js"></script>
         </section>
 
         <!-- FOOTER va en todas las paginas-->
         <footer>
-            &copy; Tiny Assistant - 2020
-            <div>Siguenos en redes sociales</div>
+            <p>&copy; Tiny Assistant - 2020</p>
+            <p>Siguenos en redes sociales</p>
             <div class="social">
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-facebook"></i></a>

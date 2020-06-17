@@ -18,18 +18,18 @@
 </head>
 
 <body onload="verificarusuario()">
-    <div off-canvas="id-1 left reveal" >
+    <div off-canvas="id-1 left overlay">
         <nav>
             <div id="menu">
-            <p><i class="fas fa-shield-alt"></i> Tiny Asisstant</p>
-            <div class="link"><a href="index.html"><i class="far fa-flag"></i> Inicio</a></div>
-            <div class="link"><a href="quienes.html"><i class="fas fa-people-carry"></i> Quienes somos</a></div>
-            <div class="link"><a href="PersonajesGEN.html"><i class="fas fa-user-plus"></i> Generador Personajes</a></div>
-            <div class="link"><a href="generadoraventuras.html"><i class="fas fa-scroll"></i> Generador Aventuras</a></div>
-            <div class="link"><a href="cerrarsesion.html"><i class="fas fa-door-open"></i >Cerrar sesion</a></div>
+                <p><i class="fas fa-shield-alt"></i> Tiny Asisstant</p>
+                <div class="link"><a href="index.html"><i class="far fa-flag"></i> Inicio</a></div>
+                <div class="link"><a href="quienes.html"><i class="fas fa-people-carry"></i> Quienes somos</a></div>
+                <div class="link"><a href="PersonajesGEN.html"><i class="fas fa-user-plus"></i> Generador Personajes</a></div>
+                <div class="link"><a href="generadoraventuras.html"><i class="fas fa-scroll"></i> Generador Aventuras</a></div>
+                <div class="link"><a href="cerrarsesion.html"><i class="fas fa-door-open"></i >Cerrar sesion</a></div>
             </div>
-        </nav>  
-    </div> 
+        </nav>
+    </div>
 
 
     <div canvas="container">
@@ -38,12 +38,12 @@
         <header>
             <h1><i class="fas fa-shield-alt"></i> Tiny Assistant</h1>
             <h2>Asistente para Tiny Dungeon</h2>
-            <button class="js-toggle-left-slidebar">Menu</button>
+            <button class="js-toggle-left-slidebar btnMenu"><i class="fas fa-bars"></i> Menu</button>
         </header>
         <section class="row">
             <div class="boxUsuario" id="perfil">
                 <div id="sihayusuario">
-                    Hola <span id="nomuser"></span><br>
+                    <div>Hola <span id="nomuser"></span></div><br>
                     <button id="cierrasesion" onclick="cerrarsesion()"><i class="fas fa-door-open"></i> Cerrar sesion</button>
                 </div>
                 <div id="nohayusuario">
@@ -54,23 +54,23 @@
                         <button type="button" onclick="login()">Login</button>
                     </form>
                 </div>
-                
+
             </div>
-    </section>
+        </section>
         <!-- FIN SECCION CABECERA-->
-    
-    <!-- FOOTER va en todas las paginas-->
-    <footer>
-        &copy; Tiny Assistant - 2020
-        <div>Siguenos en redes sociales</div>
-        <div class="social">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-google-plus"></i></a>
-        </div>
-    </footer>
-</div>
+
+        <!-- FOOTER va en todas las paginas-->
+        <footer>
+            <p>&copy; Tiny Assistant - 2020</p>
+            <p>Siguenos en redes sociales</p>
+            <div class="social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-google-plus"></i></a>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>

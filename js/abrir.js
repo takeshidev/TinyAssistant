@@ -1,3 +1,5 @@
-$('.menu-bar').on('click',function() {
-    $('.contenido').toggleClass('abrir');
+$('.btnCrear').on('click', function() {
+    if (herencia == '1') {
+        $('#hiddRasgo4').toggleClass('mostrar');
+    }
 });
